@@ -1,0 +1,46 @@
+.front, .back{
+    transition: all .5s linear;
+  }
+
+.back {
+    overflow:hidden;
+    z-index:-1;
+    display: block;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    box-sizing: border-box;
+  
+}
+.back::before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.face {
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius:10px;
+}
+.card{
+-webkit-transform-style: preserve-3d;
+transform-style: preserve-3d;
+-webkit-transition: all .5s linear;
+transition: all .5s linear;
+border-radius:10px;
+}
+
+.front{
+    z-index:1;
+}
+
+.flipped {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}

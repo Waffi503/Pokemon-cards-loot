@@ -3,6 +3,7 @@ import {useEffect,useState} from 'react'
 import pokemon from 'pokemontcgsdk'
 import { type SetDatum } from '@/interfaces/Sets'
 import { type Cards, type CardDatum } from '@/interfaces/Cards'
+import Card from '@/components/card/Card'
 
 export default function Home() {
   pokemon.configure({apiKey: process.env.API_KEY})
@@ -67,13 +68,9 @@ export default function Home() {
           </div>
           <div className='flex flex-row  flex-wrap gap-3'>
             {
-              cards.map((card,i)=>{
+              cards.map((card :CardDatum ,i)=>{
                 return (
-                  <div key={i}>
-                    <div>
-                      <img className='w-full h-full object-contain' src={card.images.small} alt={card.name} />
-                      </div>
-                  </div>
+                  <Card item={card} />
                 )
               })
             }
