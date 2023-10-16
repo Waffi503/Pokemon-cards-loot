@@ -70,7 +70,7 @@ export default function Home() {
             {
               cards.map((card :CardDatum ,i)=>{
                 return (
-                  <Card item={card} />
+                  <Card key={i} item={card} />
                 )
               })
             }
